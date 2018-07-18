@@ -4,10 +4,10 @@ import numpy as np
 import tensorflow as tf
 from random import shuffle
 # from scipy import misc
-import cv2
+import cv2, os
 
 tf.app.flags.DEFINE_string("checkpoint", "checkpoint/", "checkpoint dir")
-tf.app.flags.DEFINE_string("images_dir", "data/", "images dir")
+tf.app.flags.DEFINE_string("images_dir", "../VOC2012/JPEGImages/", "images dir")
 tf.app.flags.DEFINE_string("label_file", "gt_pascal.pkl", "label .pkl file")
 tf.app.flags.DEFINE_string("mode", "train", "train or eval")
 tf.app.flags.DEFINE_string("eval_output_dir", "output/", "evaluate images output dir")
@@ -392,7 +392,7 @@ class Generator(object):
             inputs = []
             targets = []
             for key in keys:            
-                img_path = self.path_prefix + key
+                img_path = os.path.join(self.path_prefix, key)
                 img = cv2.imread(img_path).astype('float32')
                 y = self.gt[key].copy()
                 if train and self.do_crop:
