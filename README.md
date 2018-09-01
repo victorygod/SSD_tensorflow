@@ -1,6 +1,6 @@
 # SSD_tf_simple_implemented
 
-This is a pure tf 1.4.0 implemention of SSD: Single Shot MultiBox Detector. Copied from and modified according to the Keras version https://github.com/rykov8/ssd_keras .
+This is a pure tf 1.4.0 implemention of SSD: Single Shot MultiBox Detector. Modified according to the Keras version https://github.com/rykov8/ssd_keras .
 
 ## Dependency：
 
